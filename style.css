@@ -1,0 +1,23 @@
+#body {
+    background-color: #F1F1F1;
+}
+#contener {
+    text-align: center;
+}
+
+#current_player {
+    color: red;
+}
+
+#table {
+    margin: 0px auto;
+}
+
+#table_body > tr > td > button {
+    background-color: rgb(233, 233, 233);
+    border: 1px black solid;
+    border-radius: 7px;
+    color: red;
+    padding: 15px;
+    text-decoration: none;
+}
