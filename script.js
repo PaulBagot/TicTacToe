@@ -58,6 +58,21 @@ let endGame = () => {
 }
 
 /**
+ * will display the final view when the game is finish
+ * @returns true if the game is finish
+ */
+let finalView = () => {
+    if(!endGame()) return false;
+    let winner = document.getElementById('winner');
+    if(turn > 9)
+        winner.textContent = 'DRAW';
+    else
+        winner.textContent = 'GG player ' + (currentPlayer % 2 + 1);
+    currentPlayerHTML.textContent = '';
+    return true;
+}
+
+/**
  * the main function where the game work
  * @param {rownum} i 
  * @param {column} j 
@@ -70,5 +85,6 @@ let game = (i, j) => {
     table[i][j] = nextPlayer();
     button.textContent = table[i][j];
     turn++;
-    currentPlayerHTML.textContent = 'your turn player ' + currentPlayer;
+    if(!finalView())
+        currentPlayerHTML.textContent = 'your turn player ' + currentPlayer;
 }
