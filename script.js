@@ -68,7 +68,7 @@ let finalView = () => {
         winner.textContent = 'DRAW';
     else
         winner.textContent = 'GG player ' + (currentPlayer % 2 + 1);
-    currentPlayerHTML.textContent = '';
+    currentPlayerHTML.textContent = 'You can reload the page to play again';
     return true;
 }
 
