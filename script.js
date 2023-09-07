@@ -19,6 +19,7 @@ let initTictactoe = () => {
     tableBody.innerHTML += tableHTML;
     currentPlayer = 1;
     turn = 1;
+    currentPlayerHTML.textContent = 'your turn player ' +currentPlayer;
 }
 
 initTictactoe();
@@ -54,4 +55,20 @@ let endGame = () => {
     if(table[0][2] != '' && table[0][2] == table[1][1] && table[1][1] == table[2][0])
         return true;
     return turn > 9;
+}
+
+/**
+ * the main function where the game work
+ * @param {rownum} i 
+ * @param {column} j 
+ * @returns 
+ */
+let game = (i, j) => {
+    if(table[i][j] != '') return;
+    if(endGame()) return;
+    let button = document.getElementById('button_'+i+"-"+j);
+    table[i][j] = nextPlayer();
+    button.textContent = table[i][j];
+    turn++;
+    currentPlayerHTML.textContent = 'your turn player ' + currentPlayer;
 }
